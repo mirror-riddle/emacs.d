@@ -7,7 +7,7 @@
 (require-package 'dracula-theme)
 (load-theme 'dracula t)
 
-(require-package 'typescript)
+(require-package 'typescript-mode)
 
 (require-package 'prettier-js)
 (require-package 'flymake-eslint)
