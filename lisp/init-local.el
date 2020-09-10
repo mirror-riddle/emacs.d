@@ -7,12 +7,14 @@
 (require-package 'dracula-theme)
 (load-theme 'dracula t)
 
-(require-package 'web-mode)
-(require 'web-mode)
-(add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
+(require-package 'typescript)
+
+(require-package 'prettier-js)
+(require-package 'flymake-eslint)
+(add-hook 'js2-mode-hook 'prettier-js-mode)
+(add-hook 'js2-mode-hook (lambda () (flymake-eslint-enable)))
 
 (require-package 'graphql-mode)
-(require 'graphql-mode)
 
 (require-package 'editorconfig)
 (require 'editorconfig)
