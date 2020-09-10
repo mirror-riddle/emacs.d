@@ -7,12 +7,13 @@
 (require-package 'dracula-theme)
 (load-theme 'dracula t)
 
-(require-package 'typescript-mode)
-
 (require-package 'prettier-js)
-(require-package 'flymake-eslint)
 (add-hook 'js2-mode-hook 'prettier-js-mode)
-(add-hook 'js2-mode-hook (lambda () (flymake-eslint-enable)))
+
+(require-package 'flymake-eslint)
+(add-hook 'js2-mode-hook
+          (defun setup-js2-mode ()
+            (flycheck-select-checker 'javascript-eslint)))
 
 (require-package 'graphql-mode)
 
